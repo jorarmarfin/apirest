@@ -12,31 +12,27 @@ class HomeController extends Controller
     public function getRegion()
     {
         $region = Region::select('codigo','nombre')->get();
-        return $region;
+        return response()->json($region, 200);
     }
     public function getProvincia($codigo)
     {
         $region = Region::select('id')->where('codigo',$codigo)->first();
-        $provincia = Provincia::select('codigo','nombre')
+        $provincia = Provincia::select('id','codigo','nombre')
                                 ->where('idregion',$region->id)
                                 ->get();
-        return $provincia;
+        return response()->json($provincia, 200);
     }
     public function getDistrito($codigo)
     {
         $provincia = Provincia::select('id')->where('codigo',$codigo)->first();
-        $distrito = Distrito::select('codigo','nombre')
+        $distrito = Distrito::select('id','codigo','nombre')
                                 ->where('idprovincia',$provincia->id)
                                 ->get();
-        return $distrito;
+        return response()->json($distrito, 200);
     }
-    public function getDistritos()
+    public function getUbigeos()
     {
-        $distritos = Distrito::select('r.nombre as region','p.nombre as provincia','distrito.nombre as distrito')
-                                ->join('provincias as p','distrito.idprovincia','=','p.id')
-                                ->join('region as r','p.idregion','=','r.id')
-                                ->take('10')
-                                ->get();
-        return $distritos;
+        $ubigeos = Distrito::select('id','codigo','descripcion')->get();
+        return response()->json($ubigeos, 200);
     }
 }
