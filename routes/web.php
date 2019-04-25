@@ -23,3 +23,4 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('region', 'HomeController@getRegion');
 Route::get('provincia/{codigo}', 'HomeController@getProvincia');
 Route::get('distrito/{codigo}', 'HomeController@getDistrito');
+Route::get('distritos/', 'HomeController@getDistritos');

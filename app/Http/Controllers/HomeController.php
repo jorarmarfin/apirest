@@ -30,4 +30,12 @@ class HomeController extends Controller
                                 ->get();
         return $distrito;
     }
+    public function getDistritos()
+    {
+        $distritos = Distrito::select(\DB::raw('p.nombre as provincia,distrito.nombre as distrito'))
+                                ->join('provincias as p','distrito.idprovincia','=','p.id')
+                                ->take('10')
+                                ->get();
+        return $distritos;
+    }
 }
