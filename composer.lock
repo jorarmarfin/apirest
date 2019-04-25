@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1746824201eda12ba8a56818c05409d",
+    "content-hash": "e3844eb6994b750be9fd483c72760fca",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",

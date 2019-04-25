@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('region', 'HomeController@getRegion');
+Route::get('provincia/{codigo}', 'HomeController@getProvincia');
+Route::get('distrito/{codigo}', 'HomeController@getDistrito');

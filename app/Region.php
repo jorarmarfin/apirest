@@ -10,5 +10,6 @@ class Region extends Model
     protected $table = 'region';
     protected $guarded = [];
     public $timestamps = false;
+
 }
  
